@@ -1,4 +1,5 @@
 # Version 1.0.1 - (Updated version)
+# Made by Tyler Parker
 import random
 import urllib
 import filecmp
