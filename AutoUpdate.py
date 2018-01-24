@@ -1,21 +1,23 @@
 # Version 1.0.1 - (Updated version)
 import random
 import urllib
+import filecmp
 import string
 import time
 def Main():
     print "Hello,", usern + "!"
 
 def autoUpdate():
-    verCheck = ("https://raw.githubusercontent.com/othertylerparker/PythonProject/master/AutoUpdate.py")
-    file_name = verCheck.split('/')[-1]
+    verFile = ("https://raw.githubusercontent.com/othertylerparker/PythonProject/master/AutoUpdate.py")
+    file_name = verFile.split('/')[-1]
     file = open(file_name, 'wb')
-    f = open("AutoUpdate.py")
-    if file == f:
+    f = open("AutoUpdate.py", 'r')
+    verCheck = filecmp.cmp('AutoUpdate.py', file)
+    if verCheck == True:
         print "Files match"
     else:
         print "Files do not match. Updating."
-        u = urllib.urlopen(verCheck)
+        u = urllib.urlopen(verFile)
         meta = u.info()
         file_size = int(meta.getheaders("Content-Length")[0])
         print "Downloading: %s Bytes: %s" % (file_name, file_size)
