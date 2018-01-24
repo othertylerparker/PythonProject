@@ -11,6 +11,7 @@ def autoUpdate():
     verFile = ("https://raw.githubusercontent.com/othertylerparker/PythonProject/master/AutoUpdate.py")
     file_name = verFile.split('/')[-1]
     file = open(file_name, 'r')
+    print file.readlines()
     f = open("AutoUpdate.py", 'r')
     if file.readlines() == f.readlines():
         print "Files match"
