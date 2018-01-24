@@ -13,6 +13,8 @@ def autoUpdate():
     file = open(file_name, 'r')
     u = urllib.urlopen(verFile)
     f = open("AutoUpdate.py", 'r')
+    u.readlines()
+    f.readlines()
     if u.readlines() == f.readlines():
         print "Files match"
     else:
