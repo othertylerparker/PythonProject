@@ -10,9 +10,9 @@ def Main():
 def autoUpdate():
     verFile = ("https://raw.githubusercontent.com/othertylerparker/PythonProject/master/AutoUpdate.py")
     file_name = verFile.split('/')[-1]
-    file = open(file_name, 'wb')
+    file = open(file_name, 'rb')
     f = open("AutoUpdate.py", 'r')
-    if file == f:
+    if file.readlines() == f.readlines():
         print "Files match"
     else:
         print "Files do not match. Updating."
