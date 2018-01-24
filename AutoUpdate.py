@@ -10,12 +10,13 @@ def Main():
 def autoUpdate():
     verFile = ("https://raw.githubusercontent.com/othertylerparker/PythonProject/master/AutoUpdate.py")
     file_name = verFile.split('/')[-1]
-    file = open(file_name, 'rb')
+    file = open(file_name, 'r')
     f = open("AutoUpdate.py", 'r')
     if file.readlines() == f.readlines():
         print "Files match"
     else:
         print "Files do not match. Updating."
+        file = open(file_name, 'wb')
         u = urllib.urlopen(verFile)
         meta = u.info()
         file_size = int(meta.getheaders("Content-Length")[0])
