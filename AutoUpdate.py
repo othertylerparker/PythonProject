@@ -10,7 +10,7 @@ def autoUpdate():
     verCheck = ("https://raw.githubusercontent.com/othertylerparker/PythonProject/master/AutoUpdate.py")
     file_name = verCheck.split('/')[-1]
     file = open(file_name, 'wb')
-    f = open("Christmas.py")
+    f = open("AutoUpdate.py")
     if file == f:
         print "Files match"
     else:
@@ -34,7 +34,6 @@ def autoUpdate():
 
         file.close()
         f.close()
-        f.open()
 while True:
     autoUpdate()
     with open('userpass') as f:
