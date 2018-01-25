@@ -15,7 +15,7 @@ def autoUpdate():
     f = open("AutoUpdate.py", 'r')
     checkNew = u.readline()[0]
     checkOld = f.readline()[0]
-    if checkOld == checkNew():
+    if checkOld == checkNew:
         print "Files match"
     else:
         print "Files do not match. Updating."
