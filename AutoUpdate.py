@@ -1,4 +1,4 @@
-# Version 1.0.1 - (Updated version)
+# Version 1.0.1
 import random
 import urllib
 import filecmp
@@ -13,9 +13,9 @@ def autoUpdate():
     file = open(file_name, 'r')
     u = urllib.urlopen(verFile)
     f = open("AutoUpdate.py", 'r')
-    u.readlines()
-    f.readlines()
-    if f.readlines() == u.readlines():
+    u.readline(0)
+    f.readline(0)
+    if f.readline(0) == u.readline(0):
         print "Files match"
     else:
         print "Files do not match. Updating."
