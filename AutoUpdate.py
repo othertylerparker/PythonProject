@@ -13,9 +13,9 @@ def autoUpdate():
     file = open(file_name, 'r')
     u = urllib.urlopen(verFile)
     f = open("AutoUpdate.py", 'r')
-    checkNew = u.readline()[0]
-    checkOld = f.readline()[0]
-    if checkOld == checkNew:
+    u.readlines()
+    f.readlines()
+    if f.readlines() == u.readlines():
         print "Files match"
     else:
         print "Files do not match. Updating."
